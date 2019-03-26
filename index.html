@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Maxpace</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div id="app">
+  <div class="containerB" v-for="space in spaces">
+    <div class="top" v-for="icon in navbar"><img class="navbar" :src="icon.nav"/>
+      <div class="list-group"><img class="navbar" :src="icon.rent"/><img class="navbar" :src="icon.message"/><img class="navbar" :src="icon.file"/><img class="navbar" :src="icon.member"/></div>
+    </div>
+  </div>
+  <div class="container" v-for="space in spaces">
+    <div class="top" v-for="icon in navbar"><img class="nav" :src="icon.nav"/><img class="logo" :src="icon.logo"/></div>
+    <div class="middle">
+      <div class="back">↵ 返回選單</div><img class="photo" :src="space.cover"/>
+    </div>
+    <div class="underContainer">
+      <div class="underContainerLeft">
+        <div class="spaceType">
+          <lable>活動場地</lable>
+          <input type="radio"/>
+          <lable>行李寄放</lable>
+          <input type="radio"/>
+          <lable>倉儲空間</lable>
+          <input type="radio"/>
+        </div>
+        <div class="containNum" v-for="icon in navbar"><img class="spaceTypeIcon" :src="icon.activity"/>
+          <p>{{space.activityPrice}}NT/</p>
+          <input class="num" v-model="totalTime" type="number" placeholder=""/>
+          <p>小時 / 20人</p>
+        </div>
+        <div class="address">{{space.address}}</div>
+        <div class="tags">
+          <ul>
+            <li v-for="tag in space.tags">{{tag}}</li>
+          </ul>
+        </div>
+        <div class="description">{{space.description}}</div>
+      </div>
+      <div class="underContainerRight">
+        <div class="date">
+          <input type="date"/>
+          <input type="date"/>
+        </div>
+        <div class="remark">
+          <input class="remarkInput" type="textarea"/>
+        </div>
+        <div class="paymentWay">付款方式
+          <input type="checkbox" name="" value=""/>
+          <lable>Paypal</lable>
+          <input type="checkbox" name="" value=""/>
+          <lable>信用卡付款</lable>
+          <input type="checkbox" name="" value=""/>
+          <lable>超商付款</lable>
+        </div>
+        <h2>Total {{totalTime*space.activityPrice}}
+          <button type="submit">送出</button>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

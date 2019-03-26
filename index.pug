@@ -1,0 +1,54 @@
+#app
+  .containerB(v-for="space in spaces")
+    .top(v-for="icon in navbar")
+      img.navbar(:src="icon.nav")
+      .list-group
+        img.navbar(:src="icon.rent")
+        img.navbar(:src="icon.message")
+        img.navbar(:src="icon.file")
+        img.navbar(:src="icon.member")
+  .container(v-for="space in spaces")
+    .top(v-for="icon in navbar")
+      img.nav(:src="icon.nav")
+      img.logo(:src="icon.logo")
+    .middle
+      .back ↵ 返回選單
+      img.photo(:src="space.cover")
+    .underContainer
+      .underContainerLeft
+        .spaceType
+          lable 活動場地
+          input(type="radio")
+          lable 行李寄放
+          input(type="radio")
+          lable 倉儲空間
+          input(type="radio")
+        .containNum(v-for="icon in navbar")
+          img.spaceTypeIcon(:src="icon.activity")
+          p {{space.activityPrice}}NT/
+          input.num(v-model="totalTime",type="number" placeholder="")
+          p 小時 / 20人
+        .address {{space.address}}
+        .tags
+          ul
+            li(v-for="tag in space.tags") {{tag}}
+        .description {{space.description}}
+      .underContainerRight
+        .date
+          input(type="date")
+          input(type="date")
+        .remark
+          input.remarkInput(type="textarea")
+        .paymentWay 付款方式
+          input(type="checkbox" name="" value="")
+          lable Paypal
+          input(type="checkbox" name="" value="")
+          lable 信用卡付款
+          input(type="checkbox" name="" value="")
+          lable 超商付款
+        h2 Total {{totalTime*space.activityPrice}}
+          button(type="submit") 送出
+
+
+
+

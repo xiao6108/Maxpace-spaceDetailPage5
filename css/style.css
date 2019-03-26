@@ -1,0 +1,237 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Tajawal");
+html, body, #app {
+  background-color: #f3f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Tajawal", 微軟正黑體;
+  max-width: 1440px;
+}
+
+@media screen and (min-width: 768px) {
+  #app {
+    max-width: 1024px;
+  }
+  #app .container {
+    flex: 12;
+    max-width: 1000px;
+  }
+  #app .container img.nav, #app .container img.logo {
+    display: none;
+  }
+  #app .container .back {
+    display: none;
+  }
+  #app .container img.photo {
+    width: 120%;
+    height: 400px;
+  }
+  #app ul {
+    padding: 0px;
+  }
+  #app ul li {
+    display: inline-block;
+    font-size: 15px;
+    background-color: #353535;
+    color: #f3f7f7;
+    border-radius: 5px;
+    padding: 6px 15px;
+    margin: 5px;
+    list-style: none;
+  }
+  #app .containerB {
+    flex: 1;
+    margin-top: -20%;
+    margin-left: -20%;
+  }
+  #app .containerB .top img.navbar {
+    margin: 30px 35px;
+    width: 40px;
+  }
+  #app .containerB .list-group {
+    margin-top: 130%;
+    display: flex;
+    flex-direction: column;
+  }
+  #app .containerB .list-group img.navbar {
+    margin: 20px 35px;
+    width: 40px;
+  }
+  #app .underContainer {
+    display: flex;
+  }
+  #app .underContainer .spaceType {
+    font-size: 20px;
+  }
+  #app .underContainer .spaceType input[type="radio"] {
+    width: 30px;
+  }
+  #app .underContainer .underContainerLeft {
+    padding: 30px 60px;
+  }
+  #app .underContainer .underContainerLeft .containNum {
+    align-items: center;
+    margin-top: 20px;
+    display: flex;
+  }
+  #app .underContainer .underContainerLeft .containNum img.spaceTypeIcon {
+    height: 40px;
+    margin-right: 20px;
+  }
+  #app .underContainer .underContainerLeft .containNum input.num {
+    margin: 0px 20px;
+    width: 40px;
+    height: 20px;
+  }
+  #app .underContainer .underContainerLeft p, #app .underContainer .underContainerLeft .address, #app .underContainer .underContainerLeft .description {
+    font-size: 20px;
+  }
+  #app .underContainer .underContainerRight {
+    padding: 30px;
+  }
+  #app .underContainer .underContainerRight input[type="date"] {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .containerB {
+    display: none;
+  }
+
+  .container {
+    width: 324px;
+    height: 950px;
+    border: 1px solid #000;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 400px;
+    overflow: hidden;
+    padding: 50px;
+  }
+  .container .spaceType {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .middle .back {
+    cursor: pointer;
+    font-size: 16px;
+    color: #666666;
+    margin: 16px 0px;
+    transition: 0.5s;
+  }
+  .container .middle .back:hover {
+    color: #333333;
+  }
+
+  img {
+    width: 100%;
+  }
+  img.logo {
+    width: 100px;
+    float: right;
+  }
+  img.nav {
+    width: 30px;
+  }
+  img.photo {
+    position: relative;
+    margin: 0px -50px;
+    width: 140%;
+    max-height: 250px;
+    overflow: hidden;
+  }
+  img.spaceTypeIcon {
+    width: 40px;
+  }
+
+  .underContainer {
+    padding: 20px 0px;
+  }
+  .underContainer .containNum, .underContainer .address, .underContainer .date, .underContainer .paymentWay, .underContainer .remark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .underContainer .containNum p {
+    font-size: 20px;
+    margin: 10px 10px;
+  }
+  .underContainer .address p, .underContainer .date p, .underContainer .paymentWay p, .underContainer .remark p {
+    margin: 10px 10px;
+  }
+  .underContainer .containNum .num, .underContainer .address .num, .underContainer .date .num, .underContainer .paymentWay .num, .underContainer .remark .num {
+    width: 30px;
+    height: 15px;
+  }
+}
+input, textarea, select, option {
+  padding: 8px 10px;
+  border-radius: 3px;
+  outline: none;
+  background-color: #f3f7f7;
+}
+
+input {
+  color: #666666;
+}
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.description {
+  margin-bottom: 16px;
+}
+
+ul {
+  padding: 0px;
+}
+ul li {
+  display: inline-block;
+  font-size: 10px;
+  background-color: #353535;
+  color: #f3f7f7;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin: 2px;
+  list-style: none;
+}
+
+button {
+  float: right;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 8px;
+  width: 20%;
+  color: #666666;
+  cursor: pointer;
+  transition: 0.8s;
+}
+button:hover {
+  background-color: rgba(102, 102, 102, 0.5);
+  color: #f3f7f7;
+}
+
+.remarkInput {
+  width: 300px;
+  height: 180px;
+}
+
+.paymentWay {
+  margin-top: 10px;
+  font-size: 14px;
+}
